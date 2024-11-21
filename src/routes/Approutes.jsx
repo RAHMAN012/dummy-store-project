@@ -8,7 +8,7 @@ import Profile from "../pages/profile/Profile";
 import { PrivateRoutes } from "./ProtectedRoutes";
 
 
-const Root = lazy(() => import("../Layouts/Roots"));
+const Root = lazy(() => import("../layouts/Roots"));
 const Auth = lazy(() => import ("../layouts/Auth"))
 
 export default function Approutes() {
