@@ -66,7 +66,7 @@ export default function Nav() {
             <>
               <details className="dropdown dropdown-end">
                 <summary className="btn m-1">Hi, {authUser.username}</summary>
-                <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                <ul className="text-[lightgray] font-bold menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
                   <li>
                     <Link to="/profile">Profile</Link>
                   </li>

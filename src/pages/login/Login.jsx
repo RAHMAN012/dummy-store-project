@@ -72,7 +72,7 @@ export default function Login() {
               {...register("username", { required: true })}
               type="text"
               placeholder="username"
-              className="md:w-[250px] w-full h-[48px] border-2 pl-3"
+              className="md:w-[250px] w-full h-[48px] border-2 pl-3 text-white"
               id="username"
               name="username"
               defaultValue="emilys"
@@ -91,12 +91,12 @@ export default function Login() {
                 {...register("password", { required: true })}
                 type={reveal ? "text" : "password"}
                 placeholder="your password"
-                className="md:w-[250px] w-full h-[48px] border-2 pl-3"
+                className="md:w-[250px] w-full h-[48px] border-2 pl-3 text-white"
                 id="password"
                 name="password"
                 defaultValue="emilyspass"
               />
-              <button className="absolute inset-y-0 right-2 border-0 font-semibold text-sm " onClick={togglePAssword}type="button">{reveal? <FaRegEye/> : <FaRegEyeSlash/>}</button>
+              <button  className=" text-white absolute inset-y-0 right-2 border-0 font-semibold text-sm " onClick={togglePAssword}type="button">{reveal? <FaRegEye/> : <FaRegEyeSlash/>}</button>
             </div>
 
             {errors.password && (
