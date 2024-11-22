@@ -38,7 +38,7 @@ export default function Home() {
   }, [data?.products]);
 
   return (
-    <div className="max-w-[1024px] mt-[4rem] mx-auto py-6 px-4">
+    <div className="max-w-[1024px] mt-[4rem] lg:mt-[1rem] mx-auto py-6 px-4">
       {error && <span>{error}</span>}
       {loading ? (
         <Spinner />
