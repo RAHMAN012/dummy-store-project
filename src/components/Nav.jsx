@@ -23,10 +23,10 @@ export default function Nav() {
   // console.log(data);
 
   return (
-    <div className="lg:py-12 px-4 z-50  py-4   sticky top-0  bg-slate-50">
+    <div className="lg:py-12 px-4 z-50 lg:pl-[4rem] py-4   sticky top-0  bg-slate-50">
       <div className="max-w-[1204px] flex justify-between items-center">
-        <NavLink to="/" className="font-bold text-xl flex items-center gap-1">
-          <RiStore2Line />
+        <NavLink to="/" className="font-bold text-xl flex items-center gap-1 ">
+          <RiStore2Line  className="text-[green] "/>
           DUMMY STORE
         </NavLink>
         <div className="flex items-center gap-2 hidden lg:block">
