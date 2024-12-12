@@ -70,6 +70,28 @@ export const AuthProvider = ({ children }) => {
       }
     });
   };
+  const decreaseCartQty = (product)=>{
+    setCartItems((currItems) => {
+      if (currItems.find((item) => item._id === product._id)?.qty === 1) {
+        return currItems.filter((item)=> item._id !== product._id);
+      }else{
+        return currItems.map((item)=>{
+          if(item._id === product._id){
+            return {...item,qty:item.qty - 1}
+          }else{
+            return item
+          }
+        })
+      }
+    });
+  }
+
+ const priceTotal = cartItems.reduce((total,item)=> total + item.qty * item.price,0)
+ const removeFromCart = (id)=>{
+  setCartItems((currItems)=>{
+    return currItems.filter((item)=> item._id !== id )
+  })
+ }
   const cartQuantity = cartItems?.reduce((qty,item)=> item.qty +qty, 0)
 
   const contextData = {
@@ -83,7 +105,11 @@ export const AuthProvider = ({ children }) => {
     loading,
     setData,
     addToCart,
-    cartQuantity
+    cartQuantity,
+    cartItems,
+    decreaseCartQty,
+    priceTotal,
+    removeFromCart
   };
   return (
     <AuthStore.Provider value={contextData}>{children}</AuthStore.Provider>

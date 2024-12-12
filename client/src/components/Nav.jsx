@@ -67,7 +67,9 @@ export default function Nav() {
             size="1.25rem"
           />
           <div className="relative">
+            <Link to="/cart">
             <BsHandbag size="24px" />
+            </Link>
             {cartQuantity > 0 && (
               <div className="badge absolute top-[-10px] text-white border-none right-[-5px]  bg-success badge-sm">
                 {cartQuantity}

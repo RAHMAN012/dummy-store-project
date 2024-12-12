@@ -10,7 +10,8 @@ import Signup from "../pages/signup/Signup";
 import AllProducts from "../pages/admin/AllProducts";
 import Create from "../pages/admin/create/Create";
 import EditProduct from "../pages/admin/EditProduct";
-
+import Cart from "../pages/cart/Cart";
+import Checkout from "../pages/checkout/Checkout";
 const Root = lazy(() => import("../layouts/Roots"));
 const Auth = lazy(() => import("../layouts/Auth"));
 
@@ -40,6 +41,7 @@ export default function Approutes() {
           path: "search",
           element: <Search />,
         },
+
         {
           path: "profile",
           element: (
@@ -72,6 +74,22 @@ export default function Approutes() {
             </PrivateRoutes>
           ),
         },
+        {
+          path: "cart",
+          element: (
+            <PrivateRoutes>
+              <Cart />
+            </PrivateRoutes>
+          ),
+        },
+        {
+          path:"checkout",
+          element:(
+            <PrivateRoutes>
+              <Checkout/>
+            </PrivateRoutes>
+          )
+        }
       ],
     },
     {

@@ -3,10 +3,12 @@ import { Nav } from "../components"
 
 export default function Roots() {
   return (
-    <div>
-        <Nav/>        
+    <>
+     <Nav/> 
+    <div className="bg-white min-h-dvh">               
       <Outlet/>
     </div>
+    </>
   )
 }
 

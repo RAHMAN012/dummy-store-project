@@ -1,5 +1,5 @@
-const currencyFMT = new Intl.NumberFormat(undefined, {
- currency: "GBP",
+const currencyFMT = new Intl.NumberFormat("en-NG", {
+ currency: "NGN",
  style:"currency",
 //  maximumFractionDigits:0
 })
