@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   const [cartItems, setCartItems] = useLocalStorage("cart", []);
 
   const [user, setUser] = useState({
-    isLoading: false,
+    // isLoading: false,
     isError: null,
     data: null,
     isAuthenticated: false,
@@ -23,35 +23,37 @@ export const AuthProvider = ({ children }) => {
       return;
     }
     const checkAuth = async () => {
-      setUser({ isError: null, isLoading: true });
+      // setUser({ isError: null, isLoading: true });
       try {
         const res = await getAuthenticatedUser(accessToken);
         setUser({
           data: res.data,
           isAuthenticated: true,
-          isLoading: false,
+          // isLoading: false,
         });
       } catch (error) {
         setUser({
           isError: error,
           isAuthenticated: false,
-          isLoading: false,
+          // isLoading: false,
         });
+        setAccessToken(null)
       }
     };
     checkAuth();
-  }, [accessToken]);
+  }, [accessToken, data, setAccessToken]);
 
   const logout = async () => {
     localStorage.removeItem("accessToken");
     await logoutUser();
     setUser({
-      isLoading: false,
+      // isLoading: false,
       isError: null,
       data: null,
       isAuthenticated: false,
     });
     toast.success("Logged out");
+    window.location.replace("/")
   };
   // console.log(user);
 
@@ -109,7 +111,8 @@ export const AuthProvider = ({ children }) => {
     cartItems,
     decreaseCartQty,
     priceTotal,
-    removeFromCart
+    removeFromCart,
+    setCartItems
   };
   return (
     <AuthStore.Provider value={contextData}>{children}</AuthStore.Provider>

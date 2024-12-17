@@ -2,8 +2,8 @@ import { Navigate } from "react-router-dom";
 import { useAuth } from "../hooks/useStore";
 
 export const PrivateRoutes = ({ children }) => {
-  const { user } = useAuth();
-  if (!user.isAuthenticated) {
+  const { accessToken } = useAuth();
+  if (!accessToken) {
     return <Navigate to="/login" />;
   }
 
@@ -11,8 +11,8 @@ export const PrivateRoutes = ({ children }) => {
 };
 
 export const PublicRoutes = ({ children }) => {
-  const { user } = useAuth();
-  if (user.isAuthenticated) {
+  const { accessToken } = useAuth();
+  if (accessToken) {
     return <Navigate to="/" />;
   }
   return children;

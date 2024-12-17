@@ -57,7 +57,8 @@ export default function AllProducts() {
                   {data.map((product, index) => (
                     <tbody key={product?._id}>
                       <tr className="hover:bg-slate-50">
-                        <th>{index}</th>
+                        <th>{index + 1}</th>
+                        
                         <th>
                           <Link to={`/product/${product?.title}`}>
                             <img

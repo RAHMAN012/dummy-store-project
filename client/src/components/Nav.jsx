@@ -33,19 +33,19 @@ export default function Nav() {
     },
   ];
   return (
-    <div className="lg:py-12 px-4 z-50 lg:pl-[4rem] py-4   sticky top-0  bg-slate-50">
+    <div className="lg:py-5 px-4 z-50 lg:pl-[4rem] py-4   sticky top-0  bg-slate-50">
       <div className="max-w-[1204px] flex justify-between items-center">
         <NavLink to="/" className="font-bold text-xl flex items-center gap-1 ">
-          <RiStore2Line className="text-[green] " />
+          <RiStore2Line className="text-[green]  " />
           DUMMY STORE
         </NavLink>
-        <div className="flex items-center gap-2 hidden lg:block">
+        <div className="flex items-center gap-2  hidden lg:block">
           <>
             {cats.map((item, index) => (
               <NavLink
                 to={`/products/${item.name}`}
                 key={index}
-                className="font-semibold mx-4  capitalize"
+                className="font-semibold  mx-4  capitalize"
               >
                 {({ isActive }) => (
                   <span
@@ -68,7 +68,7 @@ export default function Nav() {
           />
           <div className="relative">
             <Link to="/cart">
-            <BsHandbag size="24px" />
+              <BsHandbag size="24px" />
             </Link>
             {cartQuantity > 0 && (
               <div className="badge absolute top-[-10px] text-white border-none right-[-5px]  bg-success badge-sm">
@@ -79,31 +79,38 @@ export default function Nav() {
 
           {isAuthenticated ? (
             <>
-              <details className="dropdown dropdown-end">
+              <details className="dropdown dropdown-end ">
                 <summary className="btn m-1">Hi, {authUser.username}</summary>
                 <ul className="text-[lightgray] font-bold menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                  <li>
+                  <li className="text-black">
                     <Link to="/profile">Profile</Link>
                   </li>
                   {authUser.role.includes("admin") && (
                     <>
-                      <li>
+                      <li className="text-black">
                         <Link to="/create">Create</Link>
                       </li>
-                      <li>
+                      <li className="text-black">
                         <Link to="/allproducts">Products</Link>
+                      </li>
+                      <li className="text-black">
+                        <Link to="/orders">Orders</Link>
                       </li>
                     </>
                   )}
-                  <li>
+                  <li className="text-black">
+                    <Link to="/your-orders">Your Orders</Link>
+                  </li>
+                  <li className="text-black">
                     <span onClick={logout}>Logout</span>
                   </li>
                 </ul>
               </details>
             </>
           ) : (
-            <NavLink to="/login">
+            <NavLink to="/login" className="flex gap-1">
               <RxPerson size="20px" className="cursor-pointer" />
+              <p>Sign In</p>
             </NavLink>
           )}
           <div className="lg:hidden">

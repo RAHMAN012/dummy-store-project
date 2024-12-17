@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import daisyui from "daisyui"
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [  "./src/**/*.{html,js,jsx,ts,tsx}"], // Adjust the path as per your project structure],
   theme: {
     extend: {
       colors: {

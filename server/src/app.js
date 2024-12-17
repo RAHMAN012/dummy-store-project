@@ -7,6 +7,7 @@ import cors from "cors";
 import authRoutes from "./routes/auth.js";
 import {v2 as cloudinary} from "cloudinary"
 import productRoutes from "./routes/product.js"
+import orderRoutes from "./routes/order.js"
 const app = express();
 
 const corsOptions = {
@@ -35,6 +36,7 @@ app.get("/", (req, res) => {
 });
 app.use("/api/auth", authRoutes);
 app.use("/api/products",productRoutes)
+app.use("/api/orders",orderRoutes)
 //error for wrong routes
 app.use((req, res, next) => {
   return next(createHttpError(404, "Endpoint not found"));

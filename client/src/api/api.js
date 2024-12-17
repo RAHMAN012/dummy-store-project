@@ -67,16 +67,61 @@ export const getAllproducts = async () => {
   return await axioInstance.get("/products");
 };
 
-export const updateProducts = async(productId, formData,token)=>{
-  return await axioInstance.patch(`/products/update/${productId}`, formData,{
+export const updateProducts = async (productId, formData, token) => {
+  return await axioInstance.patch(`/products/update/${productId}`, formData, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   })
 }
 
-export const deleteProducts = async(productId,token)=>{
+export const deleteProducts = async (productId, token) => {
   return await axioInstance.delete(`/products/delete/${productId}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+}
+export const createOrder = async (orderData, token) => {
+  return await axioInstance.post(`/orders/create`, orderData, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+}
+
+export const getAllOrders = async (token) => {
+  return await axioInstance.get(`/orders/all`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+}
+
+export const getUserOrders = async (token) => {
+  return await axioInstance.get(`/orders/user-orders`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+}
+
+export const getASingleOrder = async (orderId, token) => {
+  return await axioInstance.get(`/orders/get/${orderId}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+}
+export const deleteAnOrder = async (orderId, token) => {
+  return await axioInstance.delete(`/orders/delete/${orderId}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+}
+export const updateAnOrder = async (orderId,formData, token) => {
+  return await axioInstance.patch(`/orders/update/${orderId}`, formData,{
     headers: {
       Authorization: `Bearer ${token}`,
     },

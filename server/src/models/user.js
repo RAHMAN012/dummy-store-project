@@ -24,10 +24,7 @@ const userSchema = new Schema({
     minLength: [6, "password must be at least 6 characters"],
     select: false, // prevents this field from being sent
   },
-  isVerified: {
-    type: Boolean,
-    default: false,
-  },
+  
   role: {
     type: String,
     enum: ["user", "admin"], // enum are like predefined values that should only be accepted
@@ -36,22 +33,6 @@ const userSchema = new Schema({
   token: {
     type: String,
     select: false,
-  },
-  tokenExpires: {
-    type: Date,
-    select: false,
-  },
-  verificationToken: {
-    type: String,
-    select: false,
-  },
-  verificationTokenExpires: {
-    type: Date,
-    select: false,
-  },
-  lastLogin:{
-    type:Date,
-    default:Date.now,
   },
   profilePicture:{
     type:String,
@@ -62,25 +43,8 @@ const userSchema = new Schema({
   bio:{
     type:String,
     maxLength:[150, "bio cannot be more than 150 characters"]
-  },
-  followers:{
-    type:[String],    
-  },
-  following:{
-    type:[String],
-  },
-  isPublic:{
-    type:Boolean,
-    default:true
-  },
-  savedPost:{
-    type:[Schema.Types.ObjectId],
-    ref:"Post",
-    default:[],
-    select:false
-  }
+  },  
 },
-
 {
     timestamps:true //adds createdAt an updatedAt fields to the doc
 }

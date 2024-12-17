@@ -12,6 +12,10 @@ import Create from "../pages/admin/create/Create";
 import EditProduct from "../pages/admin/EditProduct";
 import Cart from "../pages/cart/Cart";
 import Checkout from "../pages/checkout/Checkout";
+import Orders from "../pages/orders/Orders";
+import OrderDetail from "../pages/orders/OrderDetail";
+import YourOrders from "../pages/orders/YourOrders";
+
 const Root = lazy(() => import("../layouts/Roots"));
 const Auth = lazy(() => import("../layouts/Auth"));
 
@@ -87,6 +91,26 @@ export default function Approutes() {
           element:(
             <PrivateRoutes>
               <Checkout/>
+            </PrivateRoutes>
+          )
+        },
+        {
+          path:"orders",
+          element:<PrivateRoutes>
+            <Orders/>
+          </PrivateRoutes>
+        },
+        {
+          path:"orders/:orderId",
+          element:<PrivateRoutes>
+          <OrderDetail/>
+        </PrivateRoutes>
+        },
+        {
+          path:"your-orders",
+          element:(
+            <PrivateRoutes>
+              <YourOrders/>
             </PrivateRoutes>
           )
         }
