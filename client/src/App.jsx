@@ -1,5 +1,5 @@
-import  Approutes from "./routes/Approutes";
 import { Toaster } from "sonner";
+import Approutes from "./routes/Approutes";
 
 function App() {
         
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Toaster richColors />
-        <Approutes />
+        <Approutes/>
     </>
   );
 }

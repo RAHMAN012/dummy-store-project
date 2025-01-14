@@ -64,7 +64,7 @@ export default function ProductDetails() {
 
               <button
                 onClick={() => addItemsToCart(data?.product)}
-                className="mt-6 bg-slate-600 text-white w-[200px] h-[48px] border-0 "
+                className="cart-btn mt-6 bg-black  text-white w-[200px] h-[48px] border-0 "
               >
                 Add to cart
               </button>

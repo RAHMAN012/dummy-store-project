@@ -33,13 +33,16 @@ export default function Nav() {
     },
   ];
   return (
-    <div className="lg:py-5 px-4 z-50 lg:pl-[4rem] py-4   sticky top-0  bg-slate-50">
+    <div className="lg:py-5 px-4 z-50 lg:pl-[4rem] py-4   sticky top-0  bg-black opacity-90">
       <div className="max-w-[1204px] flex justify-between items-center">
-        <NavLink to="/" className="font-bold text-xl flex items-center gap-1 ">
-          <RiStore2Line className="text-[green]  " />
+        <NavLink
+          to="/"
+          className="font-bold text-xl text-white flex items-center gap-1 "
+        >
+          <RiStore2Line className="text-[white]  " />
           DUMMY STORE
         </NavLink>
-        <div className="flex items-center gap-2  hidden lg:block">
+        <div className="  flex items-center gap-2 text-white  hidden lg:block">
           <>
             {cats.map((item, index) => (
               <NavLink
@@ -50,7 +53,7 @@ export default function Nav() {
                 {({ isActive }) => (
                   <span
                     className={
-                      isActive ? "text-blue-400" : "hover:text-gray-400"
+                      isActive ? "text-blue-400" : " hover:text-gray-400"
                     }
                   >
                     {item.name}
@@ -62,16 +65,16 @@ export default function Nav() {
         </div>
         <div className="flex gap-[1rem] items-center">
           <CiSearch
-            className="cursor-pointer"
+            className="cursor-pointer text-white font-bold"
             onClick={() => handleShowSearch(true)}
-            size="1.25rem"
+            size="1.5rem"
           />
           <div className="relative">
             <Link to="/cart">
-              <BsHandbag size="24px" />
+              <BsHandbag size="24px" className="text-white" />
             </Link>
             {cartQuantity > 0 && (
-              <div className="badge absolute top-[-10px] text-white border-none right-[-5px]  bg-success badge-sm">
+              <div className="badge absolute top-[-10px] text-black border-none right-[-5px]  bg-white badge-sm">
                 {cartQuantity}
               </div>
             )}
@@ -81,27 +84,27 @@ export default function Nav() {
             <>
               <details className="dropdown dropdown-end ">
                 <summary className="btn m-1">Hi, {authUser.username}</summary>
-                <ul className="text-[lightgray] font-bold menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                  <li className="text-black">
+                <ul className="text-[lightgray] font-bold menu dropdown-content bg-black   text-white rounded-box z-[1] w-52 p-2 shadow">
+                  <li className="hover:bg-white hover:text-black">
                     <Link to="/profile">Profile</Link>
                   </li>
                   {authUser.role.includes("admin") && (
                     <>
-                      <li className="text-black">
+                      <li className="hover:bg-white hover:text-black">
                         <Link to="/create">Create</Link>
                       </li>
-                      <li className="text-black">
+                      <li className="hover:bg-white hover:text-black">
                         <Link to="/allproducts">Products</Link>
                       </li>
-                      <li className="text-black">
+                      <li className="hover:bg-white hover:text-black">
                         <Link to="/orders">Orders</Link>
                       </li>
                     </>
                   )}
-                  <li className="text-black">
+                  <li className="hover:bg-white hover:text-black">
                     <Link to="/your-orders">Your Orders</Link>
                   </li>
-                  <li className="text-black">
+                  <li className="hover:bg-white hover:text-black">
                     <span onClick={logout}>Logout</span>
                   </li>
                 </ul>
@@ -109,8 +112,8 @@ export default function Nav() {
             </>
           ) : (
             <NavLink to="/login" className="flex gap-1">
-              <RxPerson size="20px" className="cursor-pointer" />
-              <p>Sign In</p>
+              <RxPerson size="20px" className="cursor-pointer text-white" />
+              <p className="text-white">Sign In</p>
             </NavLink>
           )}
           <div className="lg:hidden">

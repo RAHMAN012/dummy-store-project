@@ -89,29 +89,34 @@ export default function Login() {
             <div className="relative">
               <input
                 type={reveal ? "text" : "password"}
-                className="w-full md:w-[250px] h-[48px] border-2 pl-3"
+                className="w-full md:w-[250px] h-[48px] border-2 pl-3 bg-red-500"
                 placeholder="enter your password"
                 id="password"
                 name="password"
                 {...register("password", { required: true })}
                 defaultValue=""
               />
-              <button
-                className="absolute inset-y-0 right-2 border-0 font-semibold text-sm"
+              <p 
+              className="absolute  inset-y-3 right-2 font-semibold text-sm cursor-pointer"
+              onClick={togglePassword}>
+                  {reveal?"hide" : "show"}
+              </p>
+              {/* <button 
+                className="absolute 0  border-0 font-semibold text-sm "
                 onClick={togglePassword}
                 type="button"
               >
                 {reveal ? "Hide" : "Show"}
-              </button>
+              </button> */}
             </div>
 
             {errors.password && (
               <span className="text-red-500">This field is required</span>
-            )}
+            )}  
           </div>
           <button
             type="submit"
-            className="mt-6 bg-blue-500 h-[48px] w-full md:w-[250px] text-slate-50 font-bold"
+            className="mt-6 bg-black h-[48px] w-full md:w-[250px] text-slate-50 font-bold"
             disabled={isSubmitting}
           >
             {loading ? "Signing in..." : "Continue"}

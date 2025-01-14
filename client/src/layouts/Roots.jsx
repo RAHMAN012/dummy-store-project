@@ -5,7 +5,7 @@ export default function Roots() {
   return (
     <>
      <Nav/> 
-    <div className="bg-white min-h-dvh">               
+       <div className="bg-white min-h-dvh">               
       <Outlet/>
     </div>
     </>
