@@ -97,7 +97,7 @@ export default function Login() {
                 defaultValue=""
               />
               <p 
-              className="absolute  inset-y-3 right-2 font-semibold text-sm cursor-pointer"
+              className="absolute  inset-y-3 right-2 font-light text-sm cursor-pointer"
               onClick={togglePassword}>
                   {reveal?"hide" : "show"}
               </p>

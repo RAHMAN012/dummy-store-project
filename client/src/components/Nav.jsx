@@ -33,11 +33,11 @@ export default function Nav() {
     },
   ];
   return (
-    <div className="lg:py-5 px-4 z-50 lg:pl-[4rem] py-4   sticky top-0  bg-black opacity-90">
+    <div className="lg:py-5 px-4 z-50 lg:pl-[4rem] py-4   sticky top-0  bg-black opacity-95">
       <div className="max-w-[1204px] flex justify-between items-center">
         <NavLink
           to="/"
-          className="font-bold text-xl text-white flex items-center gap-1 "
+          className="font-bold text-[0.85rem] md:text-xl text-white flex items-center gap-1 "
         >
           <RiStore2Line className="text-[white]  " />
           DUMMY STORE

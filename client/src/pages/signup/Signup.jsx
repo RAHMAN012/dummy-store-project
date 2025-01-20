@@ -130,13 +130,17 @@ export default function Signup() {
                 {...register("password", { required: true })}
                 
               />
-              <button
+              <p className="absolute  inset-y-3 right-2 font-light text-sm cursor-pointer"
+              onClick={togglePassword}>
+                  {reveal?"hide" : "show"}
+              </p>
+              {/* <button
                 className="absolute inset-y-0 right-2 border-0 font-semibold text-sm"
                 onClick={togglePassword}
                 type="button"
               >
                 {reveal ? "Hide" : "Show"}
-              </button>
+              </button> */}
             </div>
 
             {errors.password && (

@@ -70,7 +70,7 @@ export default function Home() {
           ))}
         </>
       )}
-      <Bestseller products={data}/>
+      {/* <Bestseller products={data}/> */}
       {/* <Banner/> */}
       {/* <Footer/> */}
     </div>
