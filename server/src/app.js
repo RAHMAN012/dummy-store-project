@@ -11,7 +11,10 @@ import orderRoutes from "./routes/order.js"
 const app = express();
 
 const corsOptions = {
-  origin: ["http://localhost:5174"],
+  origin: ["http://localhost:5174",
+  "https://dummy-store-project-frontend.vercel.app/"
+   ],
+   
   optionsSuccessStatus: 200,
   credentials: true,
 };
